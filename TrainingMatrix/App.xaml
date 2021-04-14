@@ -1,0 +1,111 @@
+﻿<Application x:Class="Treningelo.App"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:local="clr-namespace:Treningelo"
+             StartupUri="Windows/MainWindow.xaml">
+
+    <Application.Resources>
+        <SolidColorBrush x:Key="mainBrush" Color="#005380"/>
+        <SolidColorBrush x:Key="primaryBrush" Color="#0096e6"/>
+        <SolidColorBrush x:Key="secondaryBrush" Color="#4dc1ff"/>
+        <SolidColorBrush x:Key="tertiaryBrush" Color="#b3e4ff"/>
+        <SolidColorBrush x:Key="quaternaryBrush" Color="#a3c9db"/>
+        <SolidColorBrush x:Key="quinaryBrush" Color="#FFF3B0"/>
+        <!--SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" 
+                         Color="{Binding Path=Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Control}, AncestorLevel=1}}"/>
+        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" 
+                         Color="{Binding Path=Background, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType={x:Type Control}, AncestorLevel=1}}"/-->
+        <SolidColorBrush x:Key="{x:Static SystemColors.HighlightBrushKey}" 
+                         Color="{Binding Source={StaticResource mainBrush}, Path=Color}"/>
+        <SolidColorBrush x:Key="{x:Static SystemColors.InactiveSelectionHighlightBrushKey}" 
+                         Color="{Binding Source={StaticResource quaternaryBrush}, Path=Color}"/>
+
+        <Style x:Key="menuButton" TargetType="{x:Type Button}">
+            <Setter Property="Background" Value="{StaticResource mainBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="FontFamily" Value="Calibri"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="24"/>
+            <Setter Property="LayoutTransform">
+                <Setter.Value>
+                    <RotateTransform Angle="-90"/>
+                </Setter.Value>
+            </Setter>
+            <Style.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Foreground" Value="{StaticResource primaryBrush}"/>
+                </Trigger>
+            </Style.Triggers>
+        </Style>
+
+        <Style TargetType="{x:Type Label}">
+            <Setter Property="Foreground" Value="Black"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="HorizontalContentAlignment" Value="Right"/>
+            <Setter Property="FontFamily" Value="Microsoft Sans Serif"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="0"/>
+        </Style>
+
+        <Style TargetType="{x:Type TextBox}">
+            <Setter Property="Background" Value="{x:Null}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource mainBrush}"/>
+            <Setter Property="BorderThickness" Value="0.5"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+            <Setter Property="Margin" Value="3"/>
+        </Style>
+
+        <Style TargetType="{x:Type ComboBox}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="BorderBrush" Value="{x:Null}"/>
+            <Setter Property="BorderThickness" Value="0"/>
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="Background" Value="{StaticResource mainBrush}"/>
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <Style x:Key="dgHeader" TargetType="{x:Type DataGridColumnHeader}">
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="FontSize" Value="18"/>
+        </Style>
+
+        <Style TargetType="{x:Type DataGrid}">
+            <Setter Property="Margin" Value="3"/>
+            <Setter Property="IsReadOnly" Value="True"/>
+            <Setter Property="CanUserAddRows" Value="False"/>
+            <Setter Property="CanUserDeleteRows" Value="False"/>
+            <Setter Property="CanUserResizeRows" Value="False"/>
+            <Setter Property="VerticalScrollBarVisibility" Value="Visible"/>
+            <Setter Property="AutoGenerateColumns" Value="False"/>
+            <Setter Property="SelectedIndex" Value="0"/>
+            <Setter Property="ColumnHeaderStyle" Value="{StaticResource dgHeader}"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <Style TargetType="{x:Type CheckBox}">
+            <Setter Property="HorizontalAlignment" Value="Left"/>
+            <Setter Property="VerticalAlignment" Value="Center"/>
+            <Setter Property="FontSize" Value="16"/>
+        </Style>
+
+        <Style TargetType="{x:Type Image}">
+            <Setter Property="RenderOptions.EdgeMode" Value="Aliased"/>
+            <Setter Property="RenderOptions.BitmapScalingMode" Value="HighQuality"/>
+            <Setter Property="Width" Value="18"/>
+            <Setter Property="Height" Value="18"/>
+        </Style>
+
+
+    </Application.Resources>
+</Application>

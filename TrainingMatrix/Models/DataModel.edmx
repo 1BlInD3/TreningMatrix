@@ -1,0 +1,219 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="DataModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="TpAllomas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nev" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="Anyag" Type="nvarchar" MaxLength="100" />
+          <Property Name="Pontertek" Type="decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="TeruletId" Type="int" Nullable="false" />
+          <Property Name="SorId" Type="int" />
+        </EntityType>
+        <EntityType Name="TpDolgozo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Torzsszam" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Nev" Type="nvarchar" MaxLength="50" Nullable="false" />
+          <Property Name="OrvKorlat" Type="nvarchar" MaxLength="100" />
+          <Property Name="Megjegyzes" Type="nvarchar" MaxLength="250" />
+          <Property Name="Mentor" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TpSor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nev" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="TeruletId" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TpTerulet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Nev" Type="nvarchar" MaxLength="100" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TpTrening">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="DolgozoTsz" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="Oktathat" Type="bit" Nullable="false" />
+          <Property Name="TreningStart" Type="date" Nullable="false" />
+          <Property Name="TreningEnd" Type="date" />
+          <Property Name="TeruletId" Type="int" Nullable="false" />
+          <Property Name="AllomasId" Type="int" Nullable="false" />
+          <Property Name="SorId" Type="int" Nullable="false" />
+          <Property Name="Megjegyzes" Type="nvarchar" MaxLength="100" />
+          <Property Name="Mentoral" Type="bit" Nullable="false" />
+          <Property Name="Mentor" Type="nvarchar" MaxLength="50" />
+        </EntityType>
+        <EntityContainer Name="DataModelStoreContainer">
+          <EntitySet Name="TpAllomas" EntityType="Self.TpAllomas" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TpDolgozo" EntityType="Self.TpDolgozo" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TpSor" EntityType="Self.TpSor" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TpTerulet" EntityType="Self.TpTerulet" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="TpTrening" EntityType="Self.TpTrening" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="TpAllomas">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nev" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Anyag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Pontertek" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+          <Property Name="TeruletId" Type="Int32" Nullable="false" />
+          <Property Name="SorId" Type="Int32" />
+        </EntityType>
+        <EntityType Name="TpDolgozo">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Torzsszam" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="Nev" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="OrvKorlat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Megjegyzes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Mentor" Type="Boolean" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TpSor">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nev" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="TeruletId" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="TpTerulet">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Nev" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+        </EntityType>
+        <EntityContainer Name="FusetechEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="TpAllomas" EntityType="Self.TpAllomas" />
+          <EntitySet Name="TpDolgozo" EntityType="Self.TpDolgozo" />
+          <EntitySet Name="TpSor" EntityType="Self.TpSor" />
+          <EntitySet Name="TpTerulet" EntityType="Self.TpTerulet" />
+          <EntitySet Name="TpTrening" EntityType="DataModel.TpTrening" />
+        </EntityContainer>
+        <EntityType Name="TpTrening">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="DolgozoTsz" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="Oktathat" Type="Boolean" Nullable="false" />
+          <Property Name="TreningStart" Type="DateTime" Nullable="false" Precision="0" />
+          <Property Name="TreningEnd" Type="DateTime" Precision="0" />
+          <Property Name="TeruletId" Type="Int32" Nullable="false" />
+          <Property Name="AllomasId" Type="Int32" Nullable="false" />
+          <Property Name="SorId" Type="Int32" Nullable="false" />
+          <Property Name="Megjegyzes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="Mentoral" Type="Boolean" Nullable="false" />
+          <Property Name="Mentor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+        </EntityType>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="FusetechEntities">
+          <EntitySetMapping Name="TpAllomas">
+            <EntityTypeMapping TypeName="DataModel.TpAllomas">
+              <MappingFragment StoreEntitySet="TpAllomas">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nev" ColumnName="Nev" />
+                <ScalarProperty Name="Anyag" ColumnName="Anyag" />
+                <ScalarProperty Name="Pontertek" ColumnName="Pontertek" />
+                <ScalarProperty Name="TeruletId" ColumnName="TeruletId" />
+                <ScalarProperty Name="SorId" ColumnName="SorId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TpDolgozo">
+            <EntityTypeMapping TypeName="DataModel.TpDolgozo">
+              <MappingFragment StoreEntitySet="TpDolgozo">
+                <ScalarProperty Name="Mentor" ColumnName="Mentor" />
+                <ScalarProperty Name="Megjegyzes" ColumnName="Megjegyzes" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Torzsszam" ColumnName="Torzsszam" />
+                <ScalarProperty Name="Nev" ColumnName="Nev" />
+                <ScalarProperty Name="OrvKorlat" ColumnName="OrvKorlat" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TpSor">
+            <EntityTypeMapping TypeName="DataModel.TpSor">
+              <MappingFragment StoreEntitySet="TpSor">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nev" ColumnName="Nev" />
+                <ScalarProperty Name="TeruletId" ColumnName="TeruletId" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TpTerulet">
+            <EntityTypeMapping TypeName="DataModel.TpTerulet">
+              <MappingFragment StoreEntitySet="TpTerulet">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="Nev" ColumnName="Nev" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="TpTrening">
+            <EntityTypeMapping TypeName="DataModel.TpTrening">
+              <MappingFragment StoreEntitySet="TpTrening">
+                <ScalarProperty Name="Mentor" ColumnName="Mentor" />
+                <ScalarProperty Name="Mentoral" ColumnName="Mentoral" />
+                <ScalarProperty Name="Megjegyzes" ColumnName="Megjegyzes" />
+                <ScalarProperty Name="SorId" ColumnName="SorId" />
+                <ScalarProperty Name="AllomasId" ColumnName="AllomasId" />
+                <ScalarProperty Name="TeruletId" ColumnName="TeruletId" />
+                <ScalarProperty Name="TreningEnd" ColumnName="TreningEnd" />
+                <ScalarProperty Name="TreningStart" ColumnName="TreningStart" />
+                <ScalarProperty Name="Oktathat" ColumnName="Oktathat" />
+                <ScalarProperty Name="DolgozoTsz" ColumnName="DolgozoTsz" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="false" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

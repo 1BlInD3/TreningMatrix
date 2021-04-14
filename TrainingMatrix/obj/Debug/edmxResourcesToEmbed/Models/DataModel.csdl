@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="DataModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="TpAllomas">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nev" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Anyag" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Pontertek" Type="Decimal" Precision="10" Scale="4" Nullable="false" />
+    <Property Name="TeruletId" Type="Int32" Nullable="false" />
+    <Property Name="SorId" Type="Int32" />
+  </EntityType>
+  <EntityType Name="TpDolgozo">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Torzsszam" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="Nev" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OrvKorlat" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Megjegyzes" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+    <Property Name="Mentor" Type="Boolean" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TpSor">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nev" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TeruletId" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="TpTerulet">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Nev" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="FusetechEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="TpAllomas" EntityType="Self.TpAllomas" />
+    <EntitySet Name="TpDolgozo" EntityType="Self.TpDolgozo" />
+    <EntitySet Name="TpSor" EntityType="Self.TpSor" />
+    <EntitySet Name="TpTerulet" EntityType="Self.TpTerulet" />
+    <EntitySet Name="TpTrening" EntityType="DataModel.TpTrening" />
+  </EntityContainer>
+  <EntityType Name="TpTrening">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="DolgozoTsz" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="Oktathat" Type="Boolean" Nullable="false" />
+    <Property Name="TreningStart" Type="DateTime" Nullable="false" Precision="0" />
+    <Property Name="TreningEnd" Type="DateTime" Precision="0" />
+    <Property Name="TeruletId" Type="Int32" Nullable="false" />
+    <Property Name="AllomasId" Type="Int32" Nullable="false" />
+    <Property Name="SorId" Type="Int32" Nullable="false" />
+    <Property Name="Megjegyzes" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Mentoral" Type="Boolean" Nullable="false" />
+    <Property Name="Mentor" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

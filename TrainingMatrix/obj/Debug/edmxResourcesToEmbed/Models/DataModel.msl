@@ -1,0 +1,63 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="DataModelStoreContainer" CdmEntityContainer="FusetechEntities">
+    <EntitySetMapping Name="TpAllomas">
+      <EntityTypeMapping TypeName="DataModel.TpAllomas">
+        <MappingFragment StoreEntitySet="TpAllomas">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nev" ColumnName="Nev" />
+          <ScalarProperty Name="Anyag" ColumnName="Anyag" />
+          <ScalarProperty Name="Pontertek" ColumnName="Pontertek" />
+          <ScalarProperty Name="TeruletId" ColumnName="TeruletId" />
+          <ScalarProperty Name="SorId" ColumnName="SorId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TpDolgozo">
+      <EntityTypeMapping TypeName="DataModel.TpDolgozo">
+        <MappingFragment StoreEntitySet="TpDolgozo">
+          <ScalarProperty Name="Mentor" ColumnName="Mentor" />
+          <ScalarProperty Name="Megjegyzes" ColumnName="Megjegyzes" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Torzsszam" ColumnName="Torzsszam" />
+          <ScalarProperty Name="Nev" ColumnName="Nev" />
+          <ScalarProperty Name="OrvKorlat" ColumnName="OrvKorlat" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TpSor">
+      <EntityTypeMapping TypeName="DataModel.TpSor">
+        <MappingFragment StoreEntitySet="TpSor">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nev" ColumnName="Nev" />
+          <ScalarProperty Name="TeruletId" ColumnName="TeruletId" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TpTerulet">
+      <EntityTypeMapping TypeName="DataModel.TpTerulet">
+        <MappingFragment StoreEntitySet="TpTerulet">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Nev" ColumnName="Nev" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="TpTrening">
+      <EntityTypeMapping TypeName="DataModel.TpTrening">
+        <MappingFragment StoreEntitySet="TpTrening">
+          <ScalarProperty Name="Mentor" ColumnName="Mentor" />
+          <ScalarProperty Name="Mentoral" ColumnName="Mentoral" />
+          <ScalarProperty Name="Megjegyzes" ColumnName="Megjegyzes" />
+          <ScalarProperty Name="SorId" ColumnName="SorId" />
+          <ScalarProperty Name="AllomasId" ColumnName="AllomasId" />
+          <ScalarProperty Name="TeruletId" ColumnName="TeruletId" />
+          <ScalarProperty Name="TreningEnd" ColumnName="TreningEnd" />
+          <ScalarProperty Name="TreningStart" ColumnName="TreningStart" />
+          <ScalarProperty Name="Oktathat" ColumnName="Oktathat" />
+          <ScalarProperty Name="DolgozoTsz" ColumnName="DolgozoTsz" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
