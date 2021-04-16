@@ -91,6 +91,7 @@
                         IsEnabled="{Binding NotCurrentlyCreatingReport}"
                         Margin="0,20,0,0" Grid.ColumnSpan="2"/>
                 <CheckBox x:Name="cbPontertek" Content="Pontérték" HorizontalAlignment="Left" Margin="10,0,0,0" Grid.Row="2" VerticalAlignment="Top" IsChecked="{Binding Pontertek}"/>
+                <CheckBox x:Name="cbMentor" Content="Mentor" HorizontalAlignment="Left" Margin="172,0,0,0" Grid.Row="2" VerticalAlignment="Top" IsChecked="{Binding Mentoralo}"/>
             </Grid>
         </Grid>
 

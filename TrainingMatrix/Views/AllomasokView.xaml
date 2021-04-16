@@ -117,7 +117,16 @@
                             </Style>
                         </DataGridTextColumn.CellStyle>
                     </DataGridTextColumn>
-                    <DataGridTextColumn Width="AUTO" Header="★" Binding="{Binding StarWhenCommented}">
+                    <DataGridTextColumn Binding="{Binding Mentor}" Header="Mentor" Width="2*">
+                        <DataGridTextColumn.CellStyle>
+                            <Style TargetType="{x:Type DataGridCell}">
+                                <Style.Setters>
+                                    <Setter Property="TextBlock.TextAlignment" Value="Center" />
+                                </Style.Setters>
+                            </Style>
+                        </DataGridTextColumn.CellStyle>
+                    </DataGridTextColumn>
+                    <DataGridTextColumn Width="2*" Header="Megjegyzés" Binding="{Binding StarWhenCommented}">
                         <DataGridTextColumn.CellStyle>
                             <Style TargetType="{x:Type DataGridCell}">
                                 <Style.Setters>

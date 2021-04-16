@@ -29,6 +29,7 @@ namespace Treningelo.ViewModels
         public bool Material { get; set; } = true;
         //
         public bool Pontertek { get; set; } = true;
+        public bool Mentoralo { get; set; } = true;
         //
 
         private ICommand createReportCommand;
@@ -80,6 +81,7 @@ namespace Treningelo.ViewModels
             if (Complete) ws.Cells[currCol++][1] = "Tréning befejezve";
             if (Start) ws.Cells[currCol++][1] = "Tréning kezdete";
             if (End) ws.Cells[currCol++][1] = "Tréning vége";
+            if (Mentoralo) ws.Cells[currCol++][1] = "Mentor";
             if (Megjegyzes) ws.Cells[currCol++][1] = "Tréning megjegyzése";
             if (Trainer) ws.Cells[currCol++][1] = "Oktathat";
             if (Mentor) ws.Cells[currCol++][1] = "Mentorál";
@@ -105,6 +107,7 @@ namespace Treningelo.ViewModels
                 if (Complete) ws.Cells[currCol++][currRow] = t.IsComplete ? "Igen" : "Nem";
                 if (Start) ws.Cells[currCol++][currRow] = t.TreningStart.ToShortDateString();
                 if (End) ws.Cells[currCol++][currRow] = t.TreningEnd == null ? "" : ((DateTime)t.TreningEnd).ToShortDateString();
+                if (Mentoralo) ws.Cells[currCol++][currRow] = t.Mentor;
                 if (Megjegyzes) ws.Cells[currCol++][currRow] = t.Megjegyzes;
                 if (Trainer) ws.Cells[currCol++][currRow] = t.Oktathat ? "Igen" : "Nem";
                 if (Mentor) ws.Cells[currCol++][currRow] = t.Mentoral ? "Igen" : "Nem";

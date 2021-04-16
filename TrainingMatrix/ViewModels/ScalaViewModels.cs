@@ -506,7 +506,9 @@ namespace Treningelo.ViewModels
                     TeruletId = model.TeruletId,
                     AllomasId = model.AllomasId,
                     SorId = model.SorId,
-                    Megjegyzes = model.Megjegyzes
+                    Megjegyzes = model.Megjegyzes,
+                    Mentor = model.Mentor
+                   
                 };
                 IsUnderEdit = true;
             }
@@ -537,6 +539,7 @@ namespace Treningelo.ViewModels
                 this.TreningEnd = temp.TreningEnd;
                 this.Oktathat = temp.Oktathat;
                 this.Megjegyzes = temp.Megjegyzes;
+                this.Mentor = temp.Mentor;
 
                 temp = null;
                 this.IsUnderEdit = false;

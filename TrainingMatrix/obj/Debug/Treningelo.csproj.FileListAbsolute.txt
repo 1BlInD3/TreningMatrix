@@ -97,7 +97,6 @@ W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\bin\Debug\LiveChart
 W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\bin\Debug\LiveCharts.xml
 W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\bin\Debug\LiveCharts.Wpf.pdb
 W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\bin\Debug\LiveCharts.Wpf.xml
-W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\obj\Debug\Treningelo.csprojAssemblyReference.cache
 W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\obj\Debug\Views\AllomasokView.g.cs
 W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\obj\Debug\Views\DolgozokView.g.cs
 W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\obj\Debug\Views\MainView.g.cs
@@ -127,3 +126,4 @@ W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\obj\Debug\Treningel
 W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\obj\Debug\Treningelo.csproj.CopyComplete
 W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\obj\Debug\Treningelo.exe
 W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\obj\Debug\Treningelo.pdb
+W:\István_féle_szajré\fejlesztesek\trening\TrainingMatrix\obj\Debug\Treningelo.csprojAssemblyReference.cache
