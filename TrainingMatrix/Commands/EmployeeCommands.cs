@@ -69,7 +69,7 @@ namespace Treningelo.Commands
 
             if (result == MessageBoxResult.Yes)
             {
-                e.Remove();
+                e.Megjegyzes = "archiv";
                 ViewModelBase.SaveChangesToDatabase();
             }
         }

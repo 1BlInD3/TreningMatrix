@@ -39,9 +39,9 @@ namespace Treningelo.ViewModels
             get => selectedEmployee;
             set
             {
-                selectedEmployee = value;
-                OnPropertyChanged();
-                TrainingsView.Refresh();
+                    selectedEmployee = value;
+                    OnPropertyChanged();
+                    TrainingsView.Refresh();
             }
         }
         private Training selectedTraining;
@@ -105,7 +105,7 @@ namespace Treningelo.ViewModels
         public bool TrainingsFilter(object o)
         {
             var t = o as Training;
-            if (t.DolgozoTsz == SelectedEmployee?.Torzsszam) return true;
+            if (t.DolgozoTsz == SelectedEmployee?.Torzsszam /*&& SelectedEmployee ?.Megjegyzes != "archiv"*/) return true;
             else return false;
         }
 

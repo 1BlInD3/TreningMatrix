@@ -26,7 +26,11 @@ namespace Treningelo.ViewModels
             {
                 if (employees != null) return employees;
                 employees = new ObservableCollection<Employee>();
-                foreach (var d in database.TpDolgozo) employees.Add(new Employee(d));
+                foreach (var d in database.TpDolgozo) {
+                    if (d.Megjegyzes != "archiv") {
+                        employees.Add(new Employee(d));
+                    }
+                }
                 return employees;
             }
         }
