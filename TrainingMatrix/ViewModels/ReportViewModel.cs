@@ -93,7 +93,7 @@ namespace Treningelo.ViewModels
             int currRow = 2;
             foreach (var t in Trainings)
             {
-                var e = Employees.FirstOrDefault(x => x.Torzsszam == t.DolgozoTsz);
+                var e = Employees.FirstOrDefault(x => (x.Torzsszam == t.DolgozoTsz)&&(x.Megjegyzes != "archive"));
                 var a = database.TpAllomas.FirstOrDefault(x => x.Id == t.AllomasId);
 
                 currCol = 1;

@@ -30,7 +30,7 @@ namespace Treningelo.Commands
             foreach (var o in parameter as IList<object>)
             {
                 var t = o as Training;
-                var e = ViewModelBase.Employees.First(x => x.Torzsszam == t.DolgozoTsz);
+                var e = ViewModelBase.Employees.First(x => (x.Torzsszam == t.DolgozoTsz)&&(x.Megjegyzes != "archive"));
                 if (!employees.Contains(e)) employees.Add(e);
             }
         }

@@ -1,4 +1,5 @@
 ﻿using System;
+using System.Collections;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
@@ -20,6 +21,7 @@ namespace Treningelo.ViewModels
             this.PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
 
         private static ObservableCollection<Employee> employees;
+        private static ArrayList archive= new ArrayList();
         public static ObservableCollection<Employee> Employees
         {
             get
@@ -27,8 +29,12 @@ namespace Treningelo.ViewModels
                 if (employees != null) return employees;
                 employees = new ObservableCollection<Employee>();
                 foreach (var d in database.TpDolgozo) {
-                    if (d.Megjegyzes != "archiv") {
+                    if (d.Megjegyzes != "archiv")
+                    {
                         employees.Add(new Employee(d));
+                    }
+                    else {
+                        archive.Add(d.Torzsszam.ToString());
                     }
                 }
                 return employees;
@@ -42,7 +48,18 @@ namespace Treningelo.ViewModels
             {
                 if (trainings != null) return trainings;
                 trainings = new ObservableCollection<Training>();
-                foreach (var t in database.TpTrening) trainings.Add(new Training(t));
+                foreach (var e in database.TpDolgozo) {
+                    if (e.Megjegyzes == "archiv") {
+                        archive.Add(e.Torzsszam.ToString());
+                    }
+                }
+                foreach (var t in database.TpTrening)
+                {
+                    if (!archive.Contains(t.DolgozoTsz))
+                    {
+                        trainings.Add(new Training(t));
+                    }
+                }
                 return trainings;
             }
         }

@@ -118,6 +118,7 @@ namespace Treningelo.ViewModels
             get => employeesView ?? (employeesView = new ListCollectionView(Employees));
         }
         private ListCollectionView trainingsView;
+
         public ListCollectionView TrainingsView
         {
             get => trainingsView ?? (trainingsView = new ListCollectionView(Trainings) { Filter = TrainingsFilter });
